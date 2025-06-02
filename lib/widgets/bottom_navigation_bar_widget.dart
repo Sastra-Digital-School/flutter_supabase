@@ -14,6 +14,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
       Icons.leaderboard_outlined,
       Icons.person_3_outlined,
     ];
+
     return Container(
       padding: EdgeInsets.only(left: 8, right: 8, bottom: 35, top: 20),
       decoration: BoxDecoration(
