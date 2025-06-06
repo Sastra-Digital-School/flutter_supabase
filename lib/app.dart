@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_supabase_database/binding/home_binding.dart';
 import 'package:flutter_supabase_database/config/theme/app_theme.dart';
 import 'package:flutter_supabase_database/config/routes/app_routes.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       initialRoute: AppRoutes.dashboard,
+      initialBinding: HomeBinding(),
       getPages: AppRoutes.pages,
     );
   }

@@ -13,7 +13,7 @@ class DashboardController extends GetxController {
       if (userId.value == '') {
         Get.offAllNamed(AppRoutes.auth);
       } else {
-        Get.offAllNamed(AppRoutes.profile);
+        Get.offAllNamed(AppRoutes.main);
       }
     });
 
