@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_supabase_database/config/theme/app_theme.dart';
 import 'package:flutter_supabase_database/controller/dashboard_controller.dart';
 import 'package:get/get.dart';
 
@@ -13,12 +12,8 @@ class DashboardScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              AppTheme.primaryColor.withValues(alpha: 0.5),
-              AppTheme.primaryColor,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.bottomLeft,
+            colors: [Color(0xFF06145d), Color(0xFF2a72bf)],
           ),
         ),
         child: Center(

@@ -76,7 +76,7 @@ class AuthController extends GetxController {
           response.user?.id ?? '',
         );
         loading.value = false;
-        Get.offAndToNamed(AppRoutes.profile);
+        Get.offAllNamed(AppRoutes.main);
       }
     } catch (e) {
       debugPrint(e.toString());

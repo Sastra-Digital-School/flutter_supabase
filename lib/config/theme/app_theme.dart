@@ -7,8 +7,8 @@ class AppTheme {
   static final fontFamily = GoogleFonts.poppins().fontFamily;
 
   // 🎨 Shared Colors
-  static const primaryColor = Color(0xFF3B4D99); // Blue
-  static const secondaryColor = Color(0xFF4D67E8);
+  static const primaryColor = Color(0xFF2a72bf); // Blue
+  static const secondaryColor = Color(0xFF06145d);
   static const errorColor = Colors.redAccent;
   static const Color textColor = Color(0xFF000000);
 
