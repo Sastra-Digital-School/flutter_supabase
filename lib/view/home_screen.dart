@@ -89,6 +89,11 @@ class HomeScreen extends GetView<HomeController> {
     );
   }
 
+  // Padding(
+  //           padding: EdgeInsets.all(paddingValue ?? 35.0),
+  //           child: Lottie.asset('assets/lottie/Animation - Map2.json'),
+  //         ),
+
   get _buildBody {
     List<String> popularCity = ['Paris', 'Kyoto', 'Machu', 'New York'];
 
@@ -121,25 +126,44 @@ class HomeScreen extends GetView<HomeController> {
                     'Popular',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  Text(
-                    'Show all',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: AppTheme.primaryColor,
-                    ),
+                  Row(
+                    spacing: 20,
+                    children: [
+                      Text(
+                        'Show all',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: AppTheme.primaryColor,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                        width: 30,
+                        child: FloatingActionButton(
+                          onPressed: () async {
+                            var userId = controller.userId;
+                            await controller
+                                .pickAndUploadMultipleImagesAndInsertPopular(
+                                  userId,
+                                );
+                          },
+                          child: Icon(Icons.add),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(
-                  popularCity.length,
+                  controller.popular.length,
                   (index) => Column(
                     spacing: 5,
                     children: [
                       CachedNetworkImage(
-                        imageUrl: popularCityImage[index],
+                        imageUrl: controller.popular[index].signedUrl ?? "",
                         imageBuilder:
                             (context, imageProvider) => Container(
                               height: 68,
@@ -148,7 +172,7 @@ class HomeScreen extends GetView<HomeController> {
                                 color: Colors.grey,
                                 borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
-                                  image: NetworkImage(popularCityImage[index]),
+                                  image: imageProvider,
                                   fit: BoxFit.cover,
                                 ),
                               ),
