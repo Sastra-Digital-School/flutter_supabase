@@ -133,7 +133,7 @@ class HomeController extends GetxController {
             .from('images')
             .createSignedUrl(model.imagePath, 3600);
       } catch (e) {
-        print('Error generating signed URL for ${model.imagePath}: $e');
+        debugPrint('Error generating signed URL for ${model.imagePath}: $e');
         signedUrl = null;
       }
 
